@@ -1,0 +1,125 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100vh;
+}
+
+.page-container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 150px 25px 1fr;
+  grid-template-rows: 100px 1fr 30px;
+  grid-template-areas:
+    "cabecera cabecera cabecera cabecera"
+    "menu menu  contenido contenido"
+    "footer footer footer footer";
+}
+.toolbar {
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+  justify-content: space-between;
+  padding: 1em;
+}
+.page-title {
+  padding: 1em;
+  background-color: #add813;
+  font-size: large;
+  color: #ffffff;
+}
+header {
+  grid-area: cabecera;
+  display: grid;
+  grid-template-rows: 50px 50px;
+}
+nav {
+  background-color: #145a32;
+  grid-area: menu;
+}
+.menu-container ul li {
+  list-style: none;
+  padding: 1em;
+  background-color: #ffffff;
+  margin-left: -40px;
+  border: solid 1px #000000;
+}
+.menu-title {
+  font-size: large;
+  text-align: center;
+  margin-top: 1em;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+main {
+  background-color: #d6dbdf;
+  grid-area: contenido;
+  overflow-y: scroll;
+}
+
+.card {
+  width: 190px;
+  height: 190px;
+  background-color: #ffffff;
+  border: solid 1px #000000;
+  border-radius: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card img {
+  width: 100px;
+  border-radius: 50px;
+}
+
+.list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 20px;
+  gap: 40px;
+}
+.member-name {
+  text-align: center;
+}
+
+footer {
+  font-size: medium;
+  text-align: center;
+  margin-top: 5px;
+  grid-area: footer;
+}
+
+@media screen and (max-width: 780px) {
+  .page-container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 100px 1fr 30px;
+    grid-template-areas:
+      "cabecera"
+      "menu"
+      "contenido"
+      "footer";
+  }
+  .menu-container ul {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .menu-container ul li {
+    list-style: none;
+    padding: 1em;
+    background-color: #ffffff;
+    border: solid 1px #000000;
+    text-align: center;
+  }
+  .menu-title {
+    display: none;
+  }
+}
